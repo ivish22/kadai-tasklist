@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show]
-  def index
-    @tasks = Tasks.find(User_id)
-  end
 
   def show
     @user = User.find(params[:id])
@@ -28,6 +25,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name,:password,)
+    params.require(:user).permit(:name, :password, :email, :password_confirmation)
   end
 end

@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
+  
   def index
     if logged_in?
-      @tasks = current_user.tasks.build  # form_with 用
       @tasks = current_user.tasks.order(id: :desc)
     else
       redirect_to login_url
