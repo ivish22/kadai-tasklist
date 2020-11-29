@@ -61,6 +61,7 @@ class TasksController < ApplicationController
     unless @task
       redirect_to root_url
     end
+    return @task
   end
   
   def require_user_logged_in
